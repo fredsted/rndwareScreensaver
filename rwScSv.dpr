@@ -2,6 +2,7 @@ program rwScSv;
 
 uses
   Forms,
+  Windows,
   SysUtils,
   Dialogs,
   StrUtils,
@@ -16,10 +17,19 @@ uses
 {$R *.res}
 
 {$D SCRNSAVE rndware Screen Saver}
-
+var
+  Mutex: THandle;
 begin
+  // Prevent multiple instances from running
+  Mutex := CreateMutex(nil, True, 'rndware_Screensaver');
+  if (Mutex = 0) OR (GetLastError = ERROR_ALREADY_EXISTS) then
+    Application.Terminate;
+    
   Application.Initialize;
   Application.Title := 'rndware Screensaver';
+
+  // Allows us to debug screensaver while showing the screensaver when
+  // launching the executable from e.g. Explorer.
   if (ParamCount > 0) then begin
     if (UpperCase(ParamStr(1)) = '/S') then begin
       Application.CreateForm(TfrmScreensaver, frmScreensaver);
@@ -28,6 +38,7 @@ begin
       Application.CreateForm(TfrmSettings, frmSettings);
       Application.CreateForm(TfrmFontConfig, frmFontConfig);
       Application.CreateForm(TfrmAbout, frmAbout);
+      Application.CreateForm(TfrmConfirm, frmConfirm);
       Application.CreateForm(TfrmScreensaver, frmScreensaver);
     end;
   end else begin
