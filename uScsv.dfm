@@ -14,6 +14,7 @@ object frmScreensaver: TfrmScreensaver
   Font.Style = []
   FormStyle = fsStayOnTop
   OldCreateOrder = False
+  OnKeyPress = FormKeyPress
   OnMouseMove = FormMouseMove
   OnShow = FormShow
   PixelsPerInch = 96

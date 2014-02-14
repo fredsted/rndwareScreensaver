@@ -22,6 +22,7 @@ type
     procedure mouseTimerTimer(Sender: TObject);
     procedure tmrScreensaverTimer(Sender: TObject);
     procedure tmrTextUpdaterTimer(Sender: TObject);
+    procedure FormKeyPress(Sender: TObject; var Key: Char);
   private
     { Private declarations }
   public
@@ -136,10 +137,15 @@ begin
 
   currentText := StringReplace(currentText, '{compname}', compnameStr, [rfReplaceAll, rfIgnoreCase]);
   currentText := StringReplace(currentText, '{time}', dateTimeStr, [rfReplaceAll, rfIgnoreCase]);
-  currentText := StringReplace(currentText, '{datetime}', dateStr, [rfReplaceAll, rfIgnoreCase]);
+  currentText := StringReplace(currentText, '{date}', dateStr, [rfReplaceAll, rfIgnoreCase]);
   currentText := StringReplace(currentText, '{uptime}', uptimeStr, [rfReplaceAll, rfIgnoreCase]);
 
   bl.Caption := currentText;
+end;
+
+procedure TfrmScreensaver.FormKeyPress(Sender: TObject; var Key: Char);
+begin
+ Close;
 end;
 
 end.

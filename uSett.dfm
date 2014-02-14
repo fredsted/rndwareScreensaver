@@ -278,7 +278,7 @@ object frmSettings: TfrmSettings
       OnClick = ime00001Click
     end
     object imeDate1: TMenuItem
-      Caption = 'Time && Date '
+      Caption = 'Date'
       OnClick = imeDate1Click
     end
     object ComputerName1: TMenuItem

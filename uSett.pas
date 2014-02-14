@@ -241,7 +241,7 @@ end;
 
 procedure TfrmSettings.imeDate1Click(Sender: TObject);
 begin
-  AddScreenSaverText('{datetime}');
+  AddScreenSaverText('{time}');
 end;
 
 procedure TfrmSettings.Uptime1Click(Sender: TObject);
