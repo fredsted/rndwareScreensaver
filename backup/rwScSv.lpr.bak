@@ -8,17 +8,15 @@ uses
   SysUtils,
   Dialogs, Interfaces,
   StrUtils,
-  Unit1 in 'Unit1.pas' {Form1};
+
   uScsv in 'uScsv.pas' {frmScreensaver},
   uSett in 'uSett.pas' {frmSettings},
   uConf in 'uConf.pas' {frmConfirm},
   uFont in 'uFont.pas' {frmFontConfig},
-  uAbou in 'uAbou.pas' {frmAbout}
-
+  uAbou in 'uAbou.pas' {frmAbout},
+  Unit1 in 'Unit1.pas' {Form1};
 
 {$E scr}
-
-{$R *.res}
 
 
 //var

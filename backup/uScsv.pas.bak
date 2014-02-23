@@ -6,7 +6,7 @@ interface
 
 uses
   LCLIntf, LCLType, LMessages, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, ExtCtrls, StdCtrls, IniFiles, SHFolder, ShlObj{,
+  Dialogs, ExtCtrls, StdCtrls, IniFiles{,
   CustomizeDlg};
 
 type
@@ -14,11 +14,11 @@ type
   { TfrmScreensaver }
 
   TfrmScreensaver = class(TForm)
+    img: TImage;
     tmrScreensaver: TTimer;
     bl: TLabel;
-    mouseTimer: TTimer;
+    tmrMouse: TTimer;
     tmrTextUpdater: TTimer;
-    img: TImage;
 
     procedure FormCreate(Sender: TObject);
     procedure LoadSettings;
@@ -27,7 +27,7 @@ type
     procedure FormShow(Sender: TObject);
     procedure FormMouseMove(Sender: TObject; Shift: TShiftState; X,
       Y: Integer);
-    procedure mouseTimerTimer(Sender: TObject);
+    procedure tmrMouseTimer(Sender: TObject);
     procedure tmrScreensaverTimer(Sender: TObject);
     procedure tmrTextUpdaterTimer(Sender: TObject);
     procedure FormKeyPress(Sender: TObject; var Key: Char);
@@ -68,25 +68,32 @@ begin
       bl.Caption := frmSettings.EnDeCrypt(ReadString('Config', 'Text', frmSettings.screensaverMemo.Text));
       originalText := bl.Caption;
       randomColors := ReadBool('Config', 'Random', False);
-      bl.Font.Color := (ReadInteger('Config', 'FontColor', frmSettings.shpFont.Brush.Color));
+      bl.Font.Color := (ReadInteger('Config', 'FontColor', frmSettings.lblFont.Font.Color));
       frmScreensaver.Color := ColorToRGB(ReadInteger('Config', 'BackColor', frmSettings.shpBack.Brush.Color));
       bl.Font.Color := ReadInteger('Config', 'FontColor', 0);
       tmrScreensaver.Interval := ReadInteger('Config', 'Duration', StrToInt(frmSettings.edChangeSeconds.Text)) * 1000;
       bl.Font.Size := (ReadInteger('Config', 'FontSize', 10) * Screen.Width) div 1000;
       bl.Font.Name := ReadString('Config', 'Font', 'Tahoma');
       imageList.DelimitedText:=frmSettings.EnDeCrypt(ReadString('Config', 'PicturePath', ''));
+      img.Visible:=ReadBool('Config', 'ShowPictures', False);
+       bl.Visible:=ReadBool('Config', 'ShowText', False);
     end;
   finally
     iniFile.Free;
   end;
 
+  // Make fullscreen
   Top := 0;
   Left := 0;
   Width := Screen.Width;
   Height := Screen.Height;
 
-  imagePtr := 0;
 
+  //Initialize default values
+  imagePtr := 0;
+  mouseVal := 0;
+
+  // Make sure there's a new color
   if randomColors then begin
     Randomize;
     bl.Font.Color := RGB(RandomRange(0,255), Random(255), Random(255));
@@ -96,10 +103,10 @@ begin
   tmrTextUpdaterTimer(nil);
 
   tmrScreensaver.Enabled := True;
-  mouseTimer.Enabled := True;
+  tmrMouse.Enabled := True;
   tmrTextUpdater.Enabled := True;
 
-  mouseVal := 0;
+
 end;
 
 procedure TfrmScreensaver.FormCreate(Sender: TObject);
@@ -114,8 +121,7 @@ end;
 
 procedure TfrmScreensaver.FormShow(Sender: TObject);
 begin
-
-  // ShowCursor(false);
+  // ShowCursor(false);  (Doesn't work with lazarus apparently)
   LoadSettings;
   tmrScreensaverTimer(nil);
 end;
@@ -128,7 +134,7 @@ begin
   Close;
 end;
 
-procedure TfrmScreensaver.mouseTimerTimer(Sender: TObject);
+procedure TfrmScreensaver.tmrMouseTimer(Sender: TObject);
 begin
  mouseVal := 0;
 end;
@@ -137,6 +143,8 @@ procedure TfrmScreensaver.tmrScreensaverTimer(Sender: TObject);
 var
   randTop, randLeft, randTopImg, randLeftImg: integer;
 begin
+
+ if (imageList.Count > 0) then begin
   img.Picture.LoadFromFile(imageList.Strings[imagePtr]);
 
   if (imagePtr = imageList.Count-1) then begin
@@ -144,18 +152,12 @@ begin
   end else begin
    Inc(imagePtr);
   end;
+ end;
 
-  randLeft := RandomRange(0, Screen.Width-bl.Width+5);
-  randTop := RandomRange(0, Screen.Height-bl.Height+5);
-  randLeftImg := RandomRange(0, Screen.Width-img.Width+5);
-  randTopImg := RandomRange(0, Screen.Height-img.Height+5);
-  bl.Left := randLeft;
-  bl.Top := randTop;
-  img.Left := randLeftImg;
-  img.Top := randTopImg;
-
-
-
+  bl.Left := RandomRange(0, Screen.Width-bl.Width+5);
+  bl.Top := RandomRange(0, Screen.Height-bl.Height+5);
+  img.Left := RandomRange(0, Screen.Width-img.Width+5);
+  img.Top := RandomRange(0, Screen.Height-img.Height+5);
 end;
 
 function TicksToStr(Ticks: Cardinal): string;    //Convert Ticks to String
@@ -197,4 +199,4 @@ begin
   //ShowCursor(true);
 end;
 
-end.
+end.
