@@ -1,0 +1,75 @@
+object frmConfirm: TfrmConfirm
+  Left = 206
+  Height = 130
+  Top = 109
+  Width = 353
+  BorderStyle = bsDialog
+  Caption = 'Really Close?'
+  ClientHeight = 130
+  ClientWidth = 353
+  Color = clBtnFace
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  FormStyle = fsStayOnTop
+  Position = poOwnerFormCenter
+  LCLVersion = '1.0.14.0'
+  object Label1: TLabel
+    Left = 16
+    Height = 57
+    Top = 8
+    Width = 321
+    Alignment = taCenter
+    Anchors = [akTop]
+    AutoSize = False
+    Caption = 'Do you want to keep your changes?'
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Layout = tlCenter
+    ParentColor = False
+    ParentFont = False
+    WordWrap = True
+  end
+  object Bevel1: TBevel
+    Left = 0
+    Height = 4
+    Top = 72
+    Width = 353
+    Shape = bsTopLine
+  end
+  object Button1: TButton
+    Left = 27
+    Height = 25
+    Top = 92
+    Width = 97
+    Caption = 'Discard Changes'
+    OnClick = Button1Click
+    TabOrder = 1
+  end
+  object Button2: TButton
+    Left = 142
+    Height = 25
+    Top = 92
+    Width = 75
+    Cancel = True
+    Caption = 'Cancel'
+    OnClick = Button2Click
+    TabOrder = 2
+  end
+  object Button3: TButton
+    Left = 238
+    Height = 25
+    Top = 92
+    Width = 91
+    Caption = 'Save'
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ModalResult = 6
+    OnClick = Button3Click
+    ParentFont = False
+    TabOrder = 0
+  end
+end
