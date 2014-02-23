@@ -10,7 +10,7 @@ object frmSettings: TfrmSettings
   Color = clBtnFace
   Font.Color = clWindowText
   Font.Height = -13
-  Font.Name = 'Lucida Grande'
+  Font.Name = 'Tahoma'
   OnCloseQuery = FormCloseQuery
   OnCreate = FormCreate
   OnShow = FormShow
@@ -63,7 +63,7 @@ object frmSettings: TfrmSettings
         Left = 31
         Height = 17
         Top = 243
-        Width = 113
+        Width = 114
         Caption = 'Duration of change:'
         ParentColor = False
       end
@@ -71,7 +71,7 @@ object frmSettings: TfrmSettings
         Left = 231
         Height = 17
         Top = 243
-        Width = 50
+        Width = 47
         Caption = 'seconds'
         ParentColor = False
       end
@@ -95,9 +95,9 @@ object frmSettings: TfrmSettings
         Text = '5'
       end
       object chkShowText: TCheckBox
-        Left = 13
+        Left = 30
         Height = 20
-        Top = 4
+        Top = 15
         Width = 81
         Caption = 'Show Text'
         Checked = True
@@ -107,7 +107,7 @@ object frmSettings: TfrmSettings
       object screensaverMemo: TMemo
         Left = 31
         Height = 160
-        Top = 44
+        Top = 55
         Width = 336
         Alignment = taCenter
         BorderSpacing.InnerBorder = 5
@@ -117,10 +117,10 @@ object frmSettings: TfrmSettings
         TabOrder = 3
       end
       object Button3: TButton
-        Left = 311
+        Left = 295
         Height = 20
         Hint = 'Add variables'
-        Top = 4
+        Top = 223
         Width = 72
         Caption = 'Variables'
         Font.Color = clWindowText
@@ -135,13 +135,13 @@ object frmSettings: TfrmSettings
     end
     object TabSheet2: TTabSheet
       Caption = 'Images'
-      ClientHeight = 277
-      ClientWidth = 355
+      ClientHeight = 287
+      ClientWidth = 395
       object chkShowPictures: TCheckBox
         Left = 13
-        Height = 18
+        Height = 20
         Top = 4
-        Width = 102
+        Width = 111
         Caption = 'Show picture(s)'
         Checked = True
         State = cbChecked
@@ -169,15 +169,15 @@ object frmSettings: TfrmSettings
         Left = 13
         Height = 200
         Top = 28
-        Width = 328
+        Width = 369
         ItemHeight = 0
         TabOrder = 3
       end
     end
     object TabSheet3: TTabSheet
       Caption = 'Color'
-      ClientHeight = 277
-      ClientWidth = 397
+      ClientHeight = 287
+      ClientWidth = 395
       object shpBack: TShape
         Left = 15
         Height = 224
@@ -189,18 +189,20 @@ object frmSettings: TfrmSettings
       end
       object chkRandom: TCheckBox
         Left = 13
-        Height = 18
+        Height = 20
         Top = 4
-        Width = 117
+        Width = 107
         Caption = 'Random Colors'
         OnClick = chkRandomClick
         TabOrder = 0
       end
       object lblFont: TLabel
-        Left = 61
-        Height = 24
-        Top = 132
-        Width = 228
+        Left = 14
+        Height = 32
+        Top = 127
+        Width = 367
+        Alignment = taCenter
+        AutoSize = False
         Caption = 'This is an example text'
         Font.Color = clWhite
         Font.Height = -20
@@ -230,10 +232,10 @@ object frmSettings: TfrmSettings
     end
     object TabSheet4: TTabSheet
       Caption = 'Font'
-      ClientHeight = 277
-      ClientWidth = 355
+      ClientHeight = 287
+      ClientWidth = 395
       object btnFont: TSpeedButton
-        Left = 31
+        Left = 54
         Height = 56
         Top = 68
         Width = 296
@@ -246,10 +248,10 @@ object frmSettings: TfrmSettings
         ParentFont = False
       end
       object fontSize: TTrackBar
-        Left = 31
+        Left = 54
         Height = 29
         Top = 204
-        Width = 289
+        Width = 296
         Frequency = 50
         Max = 250
         Min = 10
@@ -260,10 +262,10 @@ object frmSettings: TfrmSettings
         TabOrder = 0
       end
       object Label7: TLabel
-        Left = 21
+        Left = 38
         Height = 12
         Top = 236
-        Width = 33
+        Width = 34
         Caption = 'smallest'
         Font.Color = clWindowText
         Font.Height = -9
@@ -272,7 +274,7 @@ object frmSettings: TfrmSettings
         ParentFont = False
       end
       object Label8: TLabel
-        Left = 301
+        Left = 329
         Height = 12
         Top = 236
         Width = 30
