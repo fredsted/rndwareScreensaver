@@ -52,7 +52,11 @@ type
     OpenPictureDialog1: TOpenPictureDialog;
 
     procedure Button2Click(Sender: TObject);
+    procedure Button5Click(Sender: TObject);
+    procedure Button7Click(Sender: TObject);
     procedure FormShow(Sender: TObject);
+    procedure lblFontMouseDown(Sender: TObject; Button: TMouseButton;
+      Shift: TShiftState; X, Y: Integer);
     procedure LoadConfig;
     procedure AfterLoadCondig;
     procedure SaveConfig;
@@ -72,6 +76,8 @@ type
     procedure FormCloseQuery(Sender: TObject; var CanClose: Boolean);
     procedure btnFontClick(Sender: TObject);
     procedure Button4Click(Sender: TObject);
+    procedure shpBackMouseMove(Sender: TObject; Shift: TShiftState; X,
+      Y: Integer);
     procedure Uptime1Click(Sender: TObject);
     
     function SettingDir: string;
@@ -170,10 +176,28 @@ begin
  PageControl1.ActivePage := TabSheet1;
 end;
 
+procedure TfrmSettings.lblFontMouseDown(Sender: TObject; Button: TMouseButton;
+  Shift: TShiftState; X, Y: Integer);
+begin
+
+end;
+
 procedure TfrmSettings.Button2Click(Sender: TObject);
 begin
       if canSelColor and ColorDialog2.Execute then
      lblFont.Font.Color := ColorDialog2.Color;
+end;
+
+procedure TfrmSettings.Button5Click(Sender: TObject);
+begin
+if lvImgs.SelCount = 1 then
+ lvImgs.Items.Delete(lvImgs.ItemIndex);
+end;
+
+procedure TfrmSettings.Button7Click(Sender: TObject);
+begin
+        if canSelColor and ColorDialog2.Execute then
+     shpBack.Brush.Color := ColorDialog2.Color;
 end;
 
 procedure TfrmSettings.FormCreate(Sender: TObject);
@@ -291,6 +315,12 @@ end;
 procedure TfrmSettings.Button4Click(Sender: TObject);
 begin
   frmAbout.Show;
+end;
+
+procedure TfrmSettings.shpBackMouseMove(Sender: TObject; Shift: TShiftState; X,
+  Y: Integer);
+begin
+
 end;
 
 

@@ -21,10 +21,12 @@ object frmConfirm: TfrmConfirm
     Alignment = taCenter
     Anchors = [akTop]
     AutoSize = False
-    Caption = 'Do you want to keep your changes?'
+    BidiMode = bdRightToLeft
+    Caption = 'Do you wish to keep your changes?'
     Font.Height = -12
     Font.Name = 'Lucida Sans Unicode'
     Layout = tlCenter
+    ParentBidiMode = False
     ParentColor = False
     ParentFont = False
     WordWrap = True
