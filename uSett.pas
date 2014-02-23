@@ -1,11 +1,13 @@
 unit uSett;
 
+{$MODE Delphi}
+
 interface
 
 uses
-  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  LCLIntf, LCLType, LMessages, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
   Dialogs, StdCtrls,
-  IniFiles, Buttons, ExtCtrls, ComCtrls, Menus, SHFolder, ShlObj;
+  IniFiles, Buttons, ExtCtrls, ComCtrls, Menus, SHFolder, ShlObj, ExtDlgs;
 
 type
   TfrmSettings = class(TForm)
@@ -31,7 +33,6 @@ type
     Label5: TLabel;
     ColorDialog2: TColorDialog;
     ComputerName1: TMenuItem;
-    Label6: TLabel;
     btnFont: TSpeedButton;
     Bevel3: TBevel;
     Label3: TLabel;
@@ -43,6 +44,11 @@ type
     Label8: TLabel;
     Button4: TButton;
     Uptime1: TMenuItem;
+    edPicturePath: TEdit;
+    Button6: TButton;
+    chkShowText: TCheckBox;
+    chkShowPictures: TCheckBox;
+    OpenPictureDialog1: TOpenPictureDialog;
 
     procedure LoadConfig;
     procedure AfterLoadCondig;
@@ -69,6 +75,7 @@ type
     
     function SettingDir: string;
     function GetConfigFilePath: string;
+    procedure Button6Click(Sender: TObject);
   private
 
   public
@@ -286,5 +293,11 @@ begin
   frmAbout.Show;
 end;
 
+
+procedure TfrmSettings.Button6Click(Sender: TObject);
+begin
+  if OpenPictureDialog1.Execute then
+    edPicturePath.Text := OpenPictureDialog1.Files.CommaText;
+end;
 
 end.
