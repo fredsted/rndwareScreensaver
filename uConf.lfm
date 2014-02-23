@@ -1,7 +1,7 @@
 object frmConfirm: TfrmConfirm
-  Left = 325
+  Left = 244
   Height = 130
-  Top = 763
+  Top = 556
   Width = 353
   BorderStyle = bsToolWindow
   Caption = 'Really Close?'
@@ -12,7 +12,7 @@ object frmConfirm: TfrmConfirm
   Font.Name = 'Lucida Sans Unicode'
   FormStyle = fsSystemStayOnTop
   Position = poOwnerFormCenter
-  LCLVersion = '1.0.10.0'
+  LCLVersion = '1.0.14.0'
   object Label1: TLabel
     Left = 16
     Height = 57
@@ -21,7 +21,6 @@ object frmConfirm: TfrmConfirm
     Alignment = taCenter
     Anchors = [akTop]
     AutoSize = False
-    BidiMode = bdRightToLeft
     Caption = 'Do you wish to keep your changes?'
     Font.Height = -12
     Font.Name = 'Lucida Sans Unicode'
@@ -65,4 +64,4 @@ object frmConfirm: TfrmConfirm
     ParentFont = False
     TabOrder = 0
   end
-end
+end

@@ -39,11 +39,10 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="uSett"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="6"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="179"/>
-        <CursorPos X="17" Y="192"/>
+        <TopLine Value="98"/>
+        <CursorPos X="28" Y="120"/>
         <UsageCount Value="76"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -56,6 +55,7 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="uConf"/>
+        <IsVisibleTab Value="True"/>
         <EditorIndex Value="3"/>
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
@@ -119,7 +119,6 @@
         <TopLine Value="1"/>
         <CursorPos X="1" Y="1"/>
         <UsageCount Value="24"/>
-        <LoadedDesigner Value="True"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit8>
     </Units>
@@ -129,59 +128,59 @@
     <JumpHistory Count="30" HistoryIndex="29">
       <Position1>
         <Filename Value="uSett.pas"/>
-        <Caret Line="216" Column="27" TopLine="191"/>
+        <Caret Line="173" Column="3" TopLine="171"/>
       </Position1>
       <Position2>
-        <Filename Value="uSett.pas"/>
-        <Caret Line="198" Column="5" TopLine="196"/>
+        <Filename Value="uScsv.pas"/>
+        <Caret Line="116" Column="67" TopLine="88"/>
       </Position2>
       <Position3>
-        <Filename Value="uSett.pas"/>
-        <Caret Line="173" Column="3" TopLine="171"/>
+        <Filename Value="uScsv.pas"/>
+        <Caret Line="117" Column="50" TopLine="88"/>
       </Position3>
       <Position4>
         <Filename Value="uScsv.pas"/>
-        <Caret Line="116" Column="67" TopLine="88"/>
+        <Caret Line="131" Column="38" TopLine="88"/>
       </Position4>
       <Position5>
-        <Filename Value="uScsv.pas"/>
-        <Caret Line="117" Column="50" TopLine="88"/>
+        <Filename Value="uSett.pas"/>
+        <Caret Line="136" Column="21" TopLine="101"/>
       </Position5>
       <Position6>
-        <Filename Value="uScsv.pas"/>
-        <Caret Line="131" Column="38" TopLine="88"/>
+        <Filename Value="uSett.pas"/>
+        <Caret Line="174" Column="1" TopLine="161"/>
       </Position6>
       <Position7>
         <Filename Value="uSett.pas"/>
-        <Caret Line="136" Column="21" TopLine="101"/>
+        <Caret Line="173" Column="1" TopLine="160"/>
       </Position7>
       <Position8>
         <Filename Value="uSett.pas"/>
-        <Caret Line="174" Column="1" TopLine="161"/>
+        <Caret Line="207" Column="1" TopLine="205"/>
       </Position8>
       <Position9>
         <Filename Value="uSett.pas"/>
-        <Caret Line="173" Column="1" TopLine="160"/>
+        <Caret Line="206" Column="1" TopLine="204"/>
       </Position9>
       <Position10>
         <Filename Value="uSett.pas"/>
-        <Caret Line="207" Column="1" TopLine="205"/>
+        <Caret Line="204" Column="1" TopLine="204"/>
       </Position10>
       <Position11>
         <Filename Value="uSett.pas"/>
-        <Caret Line="206" Column="1" TopLine="204"/>
+        <Caret Line="216" Column="1" TopLine="216"/>
       </Position11>
       <Position12>
         <Filename Value="uSett.pas"/>
-        <Caret Line="204" Column="1" TopLine="204"/>
+        <Caret Line="178" Column="48" TopLine="175"/>
       </Position12>
       <Position13>
         <Filename Value="uSett.pas"/>
-        <Caret Line="216" Column="1" TopLine="216"/>
+        <Caret Line="210" Column="1" TopLine="206"/>
       </Position13>
       <Position14>
         <Filename Value="uSett.pas"/>
-        <Caret Line="178" Column="48" TopLine="175"/>
+        <Caret Line="209" Column="1" TopLine="205"/>
       </Position14>
       <Position15>
         <Filename Value="uSett.pas"/>
@@ -189,63 +188,63 @@
       </Position15>
       <Position16>
         <Filename Value="uSett.pas"/>
-        <Caret Line="209" Column="1" TopLine="205"/>
+        <Caret Line="137" Column="79" TopLine="109"/>
       </Position16>
       <Position17>
         <Filename Value="uSett.pas"/>
-        <Caret Line="210" Column="1" TopLine="206"/>
+        <Caret Line="225" Column="10" TopLine="188"/>
       </Position17>
       <Position18>
         <Filename Value="uSett.pas"/>
-        <Caret Line="137" Column="79" TopLine="109"/>
+        <Caret Line="67" Column="45" TopLine="43"/>
       </Position18>
       <Position19>
-        <Filename Value="uSett.pas"/>
-        <Caret Line="225" Column="10" TopLine="188"/>
+        <Filename Value="uScsv.pas"/>
+        <Caret Line="147" Column="25" TopLine="125"/>
       </Position19>
       <Position20>
         <Filename Value="uSett.pas"/>
-        <Caret Line="67" Column="45" TopLine="43"/>
+        <Caret Line="203" Column="1" TopLine="179"/>
       </Position20>
       <Position21>
-        <Filename Value="uScsv.pas"/>
-        <Caret Line="147" Column="25" TopLine="125"/>
+        <Filename Value="uSett.pas"/>
+        <Caret Line="186" Column="3" TopLine="184"/>
       </Position21>
       <Position22>
         <Filename Value="uSett.pas"/>
-        <Caret Line="203" Column="1" TopLine="179"/>
+        <Caret Line="199" Column="14" TopLine="197"/>
       </Position22>
       <Position23>
         <Filename Value="uSett.pas"/>
-        <Caret Line="186" Column="3" TopLine="184"/>
+        <Caret Line="182" Column="3" TopLine="180"/>
       </Position23>
       <Position24>
         <Filename Value="uSett.pas"/>
-        <Caret Line="199" Column="14" TopLine="197"/>
+        <Caret Line="176" Column="1" TopLine="174"/>
       </Position24>
       <Position25>
         <Filename Value="uSett.pas"/>
-        <Caret Line="182" Column="3" TopLine="180"/>
+        <Caret Line="183" Column="5" TopLine="180"/>
       </Position25>
       <Position26>
         <Filename Value="uSett.pas"/>
-        <Caret Line="176" Column="1" TopLine="174"/>
+        <Caret Line="209" Column="29" TopLine="158"/>
       </Position26>
       <Position27>
         <Filename Value="uSett.pas"/>
-        <Caret Line="183" Column="5" TopLine="180"/>
+        <Caret Line="185" Column="28" TopLine="183"/>
       </Position27>
       <Position28>
         <Filename Value="uSett.pas"/>
-        <Caret Line="209" Column="29" TopLine="158"/>
+        <Caret Line="323" Column="3" TopLine="282"/>
       </Position28>
       <Position29>
         <Filename Value="uSett.pas"/>
-        <Caret Line="185" Column="28" TopLine="183"/>
+        <Caret Line="115" Column="14" TopLine="93"/>
       </Position29>
       <Position30>
         <Filename Value="uSett.pas"/>
-        <Caret Line="323" Column="3" TopLine="282"/>
+        <Caret Line="120" Column="28" TopLine="106"/>
       </Position30>
     </JumpHistory>
   </ProjectSession>

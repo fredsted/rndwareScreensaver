@@ -1,23 +1,24 @@
 object frmSettings: TfrmSettings
-  Left = 563
-  Height = 384
-  Top = 233
-  Width = 397
+  Left = 217
+  Height = 383
+  Top = 143
+  Width = 435
+  BorderStyle = bsSizeToolWin
   Caption = 'Screensaver settings'
-  ClientHeight = 384
-  ClientWidth = 397
+  ClientHeight = 383
+  ClientWidth = 435
   Color = clBtnFace
   Font.Color = clWindowText
-  Font.Height = -11
+  Font.Height = -13
   Font.Name = 'Lucida Grande'
   OnCloseQuery = FormCloseQuery
   OnCreate = FormCreate
   OnShow = FormShow
   Position = poDesktopCenter
-  LCLVersion = '1.0.10.0'
+  LCLVersion = '1.0.14.0'
   Visible = True
   object Button1: TButton
-    Left = 265
+    Left = 304
     Height = 22
     Top = 344
     Width = 110
@@ -27,7 +28,7 @@ object frmSettings: TfrmSettings
     TabOrder = 0
   end
   object btnShowDemo: TButton
-    Left = 141
+    Left = 176
     Height = 22
     Top = 344
     Width = 110
@@ -37,7 +38,7 @@ object frmSettings: TfrmSettings
     TabOrder = 1
   end
   object Button4: TButton
-    Left = 16
+    Left = 14
     Height = 22
     Top = 344
     Width = 72
@@ -50,34 +51,34 @@ object frmSettings: TfrmSettings
     Left = 14
     Height = 316
     Top = 16
-    Width = 361
-    ActivePage = TabSheet3
-    TabIndex = 2
+    Width = 403
+    ActivePage = TabSheet1
+    TabIndex = 0
     TabOrder = 3
     object TabSheet1: TTabSheet
       Caption = 'General'
-      ClientHeight = 277
-      ClientWidth = 355
+      ClientHeight = 287
+      ClientWidth = 395
       object Label3: TLabel
-        Left = 15
-        Height = 14
+        Left = 31
+        Height = 17
         Top = 243
-        Width = 107
+        Width = 113
         Caption = 'Duration of change:'
         ParentColor = False
       end
       object Label4: TLabel
-        Left = 193
-        Height = 14
+        Left = 231
+        Height = 17
         Top = 243
-        Width = 44
+        Width = 50
         Caption = 'seconds'
         ParentColor = False
       end
       object udDuration: TUpDown
-        Left = 166
-        Height = 28
-        Top = 236
+        Left = 209
+        Height = 24
+        Top = 241
         Width = 15
         Associate = edChangeSeconds
         Min = 1
@@ -86,8 +87,8 @@ object frmSettings: TfrmSettings
         Wrap = False
       end
       object edChangeSeconds: TEdit
-        Left = 129
-        Height = 19
+        Left = 175
+        Height = 24
         Top = 241
         Width = 34
         TabOrder = 1
@@ -95,19 +96,20 @@ object frmSettings: TfrmSettings
       end
       object chkShowText: TCheckBox
         Left = 13
-        Height = 18
+        Height = 20
         Top = 4
-        Width = 76
+        Width = 81
         Caption = 'Show Text'
         Checked = True
         State = cbChecked
         TabOrder = 2
       end
       object screensaverMemo: TMemo
-        Left = 13
-        Height = 80
-        Top = 28
-        Width = 328
+        Left = 31
+        Height = 160
+        Top = 44
+        Width = 336
+        Alignment = taCenter
         BorderSpacing.InnerBorder = 5
         Lines.Strings = (
           'rndware Screensaver'
@@ -115,10 +117,10 @@ object frmSettings: TfrmSettings
         TabOrder = 3
       end
       object Button3: TButton
-        Left = 269
+        Left = 311
         Height = 20
         Hint = 'Add variables'
-        Top = 116
+        Top = 4
         Width = 72
         Caption = 'Variables'
         Font.Color = clWindowText
@@ -151,6 +153,7 @@ object frmSettings: TfrmSettings
         Top = 244
         Width = 75
         Caption = 'Remove'
+        OnClick = Button5Click
         TabOrder = 1
       end
       object Button6: TButton
@@ -174,20 +177,21 @@ object frmSettings: TfrmSettings
     object TabSheet3: TTabSheet
       Caption = 'Color'
       ClientHeight = 277
-      ClientWidth = 355
+      ClientWidth = 397
       object shpBack: TShape
-        Left = 13
-        Height = 192
+        Left = 15
+        Height = 224
         Top = 36
-        Width = 328
+        Width = 368
         Brush.Color = clBlack
         Pen.Style = psClear
+        OnMouseMove = shpBackMouseMove
       end
       object chkRandom: TCheckBox
         Left = 13
         Height = 18
         Top = 4
-        Width = 102
+        Width = 117
         Caption = 'Random Colors'
         OnClick = chkRandomClick
         TabOrder = 0
@@ -195,7 +199,7 @@ object frmSettings: TfrmSettings
       object lblFont: TLabel
         Left = 61
         Height = 24
-        Top = 124
+        Top = 132
         Width = 228
         Caption = 'This is an example text'
         Font.Color = clWhite
@@ -203,22 +207,24 @@ object frmSettings: TfrmSettings
         Font.Name = 'Lucida Grande'
         ParentColor = False
         ParentFont = False
+        OnMouseDown = lblFontMouseDown
       end
       object Button2: TButton
-        Left = 71
+        Left = 159
         Height = 20
-        Top = 244
-        Width = 75
+        Top = 4
+        Width = 88
         Caption = 'Font Color'
         OnClick = Button2Click
         TabOrder = 1
       end
       object Button7: TButton
-        Left = 166
+        Left = 255
         Height = 20
-        Top = 244
-        Width = 123
+        Top = 4
+        Width = 128
         Caption = 'Background color'
+        OnClick = Button7Click
         TabOrder = 2
       end
     end
@@ -358,4 +364,4 @@ object frmSettings: TfrmSettings
     left = 288
     top = 432
   end
-end
+end

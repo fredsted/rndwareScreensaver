@@ -111,13 +111,13 @@ function TfrmSettings.SettingDir: string;
 var
    FilePath: array [0..255] of char;
 begin
-  //SHGetSpecialFolderPath(0, @FilePath[0], CSIDL_APPDATA, True);
-  Result := '~'; //FilePath;
+
+  Result := 'scrensaver.ini';
 end;
 
 function TfrmSettings.GetConfigFilePath: string;
 begin
-  Result := self.SettingDir+'\screenconfig.ini';
+  Result := self.SettingDir;
 end;
 
 procedure TfrmSettings.LoadConfig;
@@ -330,4 +330,4 @@ begin
     lvImgs.Items.Commatext := lvImgs.Items.Commatext + OpenPictureDialog1.Files.CommaText;
 end;
 
-end.
+end.
