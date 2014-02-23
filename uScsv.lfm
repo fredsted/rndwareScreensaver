@@ -1,7 +1,7 @@
 object frmScreensaver: TfrmScreensaver
-  Left = 442
+  Left = 410
   Height = 268
-  Top = 140
+  Top = 251
   Width = 371
   BorderIcons = []
   BorderStyle = bsNone
@@ -12,51 +12,53 @@ object frmScreensaver: TfrmScreensaver
   Font.Color = clWindowText
   Font.Height = -11
   Font.Name = 'Tahoma'
-  FormStyle = fsStayOnTop
+  FormStyle = fsSystemStayOnTop
   OnClose = FormClose
   OnCreate = FormCreate
   OnKeyPress = FormKeyPress
   OnMouseMove = FormMouseMove
   OnShow = FormShow
-  LCLVersion = '1.0.14.0'
+  LCLVersion = '1.0.10.0'
   object img: TImage
     Left = 32
     Height = 105
-    Top = 40
+    Top = 64
     Width = 105
     AutoSize = True
     Center = True
     Transparent = True
   end
   object bl: TLabel
-    Left = 16
+    Left = 32
     Height = 14
-    Top = 16
-    Width = 50
+    Top = 56
+    Width = 49
+    Alignment = taCenter
     Caption = 'Loading...'
     Font.Color = clYellow
     Font.Height = -11
     Font.Name = 'Tahoma'
+    Layout = tlCenter
     ParentColor = False
     ParentFont = False
   end
   object tmrScreensaver: TTimer
     Enabled = False
     OnTimer = tmrScreensaverTimer
-    left = 104
-    top = 8
+    left = 272
+    top = 32
   end
-  object mouseTimer: TTimer
+  object tmrMouse: TTimer
     Enabled = False
-    Interval = 10000
-    OnTimer = mouseTimerTimer
-    left = 136
-    top = 8
+    Interval = 5000
+    OnTimer = tmrMouseTimer
+    left = 304
+    top = 32
   end
   object tmrTextUpdater: TTimer
     Enabled = False
     OnTimer = tmrTextUpdaterTimer
-    left = 168
-    top = 8
+    left = 336
+    top = 32
   end
-end
+end

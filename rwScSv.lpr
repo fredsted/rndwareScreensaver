@@ -18,11 +18,12 @@ uses
 
 {$E scr}
 
-{$R *.res}
-
 
 //var
  // Mutex: THandle;
+
+{$R *.res}
+
 begin
   // Prevent multiple instances from running
  // Mutex := CreateMutex(nil, True, 'rndware_Screensaver');

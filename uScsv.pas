@@ -6,7 +6,7 @@ interface
 
 uses
   LCLIntf, LCLType, LMessages, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, ExtCtrls, StdCtrls, IniFiles, SHFolder, ShlObj{,
+  Dialogs, ExtCtrls, StdCtrls, IniFiles{,
   CustomizeDlg};
 
 type
@@ -14,9 +14,10 @@ type
   { TfrmScreensaver }
 
   TfrmScreensaver = class(TForm)
+    img: TImage;
     tmrScreensaver: TTimer;
     bl: TLabel;
-    mouseTimer: TTimer;
+    tmrMouse: TTimer;
     tmrTextUpdater: TTimer;
 
     procedure FormCreate(Sender: TObject);
@@ -26,10 +27,11 @@ type
     procedure FormShow(Sender: TObject);
     procedure FormMouseMove(Sender: TObject; Shift: TShiftState; X,
       Y: Integer);
-    procedure mouseTimerTimer(Sender: TObject);
+    procedure tmrMouseTimer(Sender: TObject);
     procedure tmrScreensaverTimer(Sender: TObject);
     procedure tmrTextUpdaterTimer(Sender: TObject);
     procedure FormKeyPress(Sender: TObject; var Key: Char);
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
   private
     { Private declarations }
   public
@@ -48,6 +50,8 @@ var
   mouseVal: integer;
   originalText: string;
   randomColors: boolean;
+  imageList: TStringList;
+  imagePtr: integer;
 
 
 {$R *.lfm}
@@ -58,28 +62,38 @@ var
   images: TStringList;
 begin
   iniFile := TIniFile.Create(frmSettings.GetConfigFilePath);
+  imageList := TStringList.Create;
   try
     with iniFile do begin
       bl.Caption := frmSettings.EnDeCrypt(ReadString('Config', 'Text', frmSettings.screensaverMemo.Text));
       originalText := bl.Caption;
       randomColors := ReadBool('Config', 'Random', False);
-      bl.Font.Color := (ReadInteger('Config', 'FontColor', frmSettings.shpFont.Brush.Color));
+      bl.Font.Color := (ReadInteger('Config', 'FontColor', frmSettings.lblFont.Font.Color));
       frmScreensaver.Color := ColorToRGB(ReadInteger('Config', 'BackColor', frmSettings.shpBack.Brush.Color));
       bl.Font.Color := ReadInteger('Config', 'FontColor', 0);
       tmrScreensaver.Interval := ReadInteger('Config', 'Duration', StrToInt(frmSettings.edChangeSeconds.Text)) * 1000;
       bl.Font.Size := (ReadInteger('Config', 'FontSize', 10) * Screen.Width) div 1000;
       bl.Font.Name := ReadString('Config', 'Font', 'Tahoma');
       imageList.DelimitedText:=frmSettings.EnDeCrypt(ReadString('Config', 'PicturePath', ''));
+      img.Visible:=ReadBool('Config', 'ShowPictures', False);
+       bl.Visible:=ReadBool('Config', 'ShowText', False);
     end;
   finally
     iniFile.Free;
   end;
 
+  // Make fullscreen
   Top := 0;
   Left := 0;
   Width := Screen.Width;
   Height := Screen.Height;
 
+
+  //Initialize default values
+  imagePtr := 0;
+  mouseVal := 0;
+
+  // Make sure there's a new color
   if randomColors then begin
     Randomize;
     bl.Font.Color := RGB(RandomRange(0,255), Random(255), Random(255));
@@ -88,7 +102,16 @@ begin
 
   tmrTextUpdaterTimer(nil);
 
-  mouseVal := 0;
+  tmrScreensaver.Enabled := True;
+  tmrMouse.Enabled := True;
+  tmrTextUpdater.Enabled := True;
+
+
+end;
+
+procedure TfrmScreensaver.FormCreate(Sender: TObject);
+begin
+  imageList := TStringList.Create;
 end;
 
 function TfrmScreensaver.GetRandomColor: TColor;
@@ -98,8 +121,7 @@ end;
 
 procedure TfrmScreensaver.FormShow(Sender: TObject);
 begin
-
-  // ShowCursor(false);
+  // ShowCursor(false);  (Doesn't work with lazarus apparently)
   LoadSettings;
   tmrScreensaverTimer(nil);
 end;
@@ -112,19 +134,30 @@ begin
   Close;
 end;
 
-procedure TfrmScreensaver.mouseTimerTimer(Sender: TObject);
+procedure TfrmScreensaver.tmrMouseTimer(Sender: TObject);
 begin
  mouseVal := 0;
 end;
 
 procedure TfrmScreensaver.tmrScreensaverTimer(Sender: TObject);
 var
-  randTop, randLeft: integer;
+  randTop, randLeft, randTopImg, randLeftImg: integer;
 begin
-  randLeft := RandomRange(0, Screen.Width-bl.Width+5);
-  randTop := RandomRange(0, Screen.Height-bl.Height+5);
-  bl.Left := randLeft;
-  bl.Top := randTop;
+
+ if (imageList.Count > 0) then begin
+  img.Picture.LoadFromFile(imageList.Strings[imagePtr]);
+
+  if (imagePtr = imageList.Count-1) then begin
+   imagePtr := 0;
+  end else begin
+   Inc(imagePtr);
+  end;
+ end;
+
+  bl.Left := RandomRange(0, Screen.Width-bl.Width+5);
+  bl.Top := RandomRange(0, Screen.Height-bl.Height+5);
+  img.Left := RandomRange(0, Screen.Width-img.Width+5);
+  img.Top := RandomRange(0, Screen.Height-img.Height+5);
 end;
 
 function TicksToStr(Ticks: Cardinal): string;    //Convert Ticks to String
@@ -159,4 +192,11 @@ begin
  Close;
 end;
 
-end.
+procedure TfrmScreensaver.FormClose(Sender: TObject;
+  var Action: TCloseAction);
+begin
+     //frmScreensaver.Cursor:=;
+  //ShowCursor(true);
+end;
+
+end.
