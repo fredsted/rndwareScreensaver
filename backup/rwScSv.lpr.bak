@@ -1,29 +1,33 @@
 program rwScSv;
 
+{$MODE Delphi}
+
 uses
   Forms,
-  Windows,
+  LCLIntf, LCLType, LMessages,
   SysUtils,
-  Dialogs,
+  Dialogs, Interfaces,
   StrUtils,
+  Unit1 in 'Unit1.pas' {Form1};
   uScsv in 'uScsv.pas' {frmScreensaver},
   uSett in 'uSett.pas' {frmSettings},
   uConf in 'uConf.pas' {frmConfirm},
   uFont in 'uFont.pas' {frmFontConfig},
-  uAbou in 'uAbou.pas' {frmAbout};
+  uAbou in 'uAbou.pas' {frmAbout}
+
 
 {$E scr}
 
 {$R *.res}
 
 
-var
-  Mutex: THandle;
+//var
+ // Mutex: THandle;
 begin
   // Prevent multiple instances from running
-  Mutex := CreateMutex(nil, True, 'rndware_Screensaver');
-  if (Mutex = 0) OR (GetLastError = ERROR_ALREADY_EXISTS) then
-    Application.Terminate;
+ // Mutex := CreateMutex(nil, True, 'rndware_Screensaver');
+ // if (Mutex = 0) OR (GetLastError = ERROR_ALREADY_EXISTS) then
+ //   Application.Terminate;
     
   Application.Initialize;
   Application.Title := 'rndware Screensaver';
@@ -35,6 +39,7 @@ begin
       Application.CreateForm(TfrmScreensaver, frmScreensaver);
       Application.CreateForm(TfrmSettings, frmSettings);
     end else if (LeftStr(UpperCase(ParamStr(1)),2) = '/C') then begin
+      Application.CreateForm(TForm1, Form1);
       Application.CreateForm(TfrmSettings, frmSettings);
       Application.CreateForm(TfrmFontConfig, frmFontConfig);
       Application.CreateForm(TfrmAbout, frmAbout);

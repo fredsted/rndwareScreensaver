@@ -1,0 +1,376 @@
+object frmSettings: TfrmSettings
+  Left = 303
+  Height = 463
+  Top = 316
+  Width = 318
+  BorderStyle = bsDialog
+  Caption = 'Screensaver settings'
+  ClientHeight = 463
+  ClientWidth = 318
+  Color = clBtnFace
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  OnCloseQuery = FormCloseQuery
+  OnCreate = FormCreate
+  Position = poDesktopCenter
+  LCLVersion = '1.0.14.0'
+  object shpFont: TShape
+    Cursor = crHandPoint
+    Left = 14
+    Height = 27
+    Top = 204
+    Width = 27
+    Pen.Style = psClear
+  end
+  object Bevel1: TBevel
+    Left = 0
+    Height = 4
+    Top = 145
+    Width = 321
+    Shape = bsTopLine
+  end
+  object Label1: TLabel
+    Left = 53
+    Height = 14
+    Top = 211
+    Width = 49
+    Caption = 'Font color'
+    ParentColor = False
+  end
+  object shpBack: TShape
+    Cursor = crHandPoint
+    Left = 14
+    Height = 27
+    Top = 236
+    Width = 27
+    Brush.Color = clBlack
+    Pen.Style = psClear
+  end
+  object Label2: TLabel
+    Left = 53
+    Height = 14
+    Top = 243
+    Width = 83
+    Caption = 'Background color'
+    ParentColor = False
+  end
+  object Bevel4: TBevel
+    Left = -8
+    Height = 4
+    Top = 289
+    Width = 329
+    Shape = bsTopLine
+  end
+  object Bevel5: TBevel
+    Left = -8
+    Height = 4
+    Top = 353
+    Width = 329
+    Shape = bsTopLine
+  end
+  object SpeedButton1: TSpeedButton
+    Cursor = crHandPoint
+    Left = 14
+    Height = 26
+    Top = 204
+    Width = 147
+    Flat = True
+    NumGlyphs = 0
+    OnClick = SpeedButton1Click
+  end
+  object SpeedButton2: TSpeedButton
+    Cursor = crHandPoint
+    Left = 14
+    Height = 26
+    Top = 236
+    Width = 147
+    Flat = True
+    NumGlyphs = 0
+    OnClick = SpeedButton2Click
+  end
+  object Bevel2: TBevel
+    Left = -9
+    Height = 4
+    Top = 409
+    Width = 329
+    Shape = bsTopLine
+  end
+  object Label5: TLabel
+    Left = 10
+    Height = 14
+    Top = 315
+    Width = 44
+    Caption = 'Font size'
+    ParentColor = False
+  end
+  object btnFont: TSpeedButton
+    Left = 192
+    Height = 105
+    Top = 168
+    Width = 113
+    Caption = 'Set font'
+    Flat = True
+    Font.Color = clWindowText
+    Font.Height = -20
+    Font.Name = 'Tahoma'
+    NumGlyphs = 0
+    OnClick = btnFontClick
+    ParentFont = False
+  end
+  object Bevel3: TBevel
+    Left = 176
+    Height = 129
+    Top = 152
+    Width = 9
+    Shape = bsLeftLine
+  end
+  object Label3: TLabel
+    Left = 13
+    Height = 14
+    Top = 376
+    Width = 97
+    Caption = 'Duration of change:'
+    ParentColor = False
+  end
+  object Label4: TLabel
+    Left = 181
+    Height = 14
+    Top = 376
+    Width = 40
+    Caption = 'seconds'
+    ParentColor = False
+  end
+  object Label7: TLabel
+    Left = 72
+    Height = 12
+    Top = 336
+    Width = 34
+    Caption = 'smallest'
+    Font.Color = clWindowText
+    Font.Height = -9
+    Font.Name = 'Tahoma'
+    ParentColor = False
+    ParentFont = False
+  end
+  object Label8: TLabel
+    Left = 280
+    Height = 12
+    Top = 336
+    Width = 30
+    Caption = 'biggest'
+    Font.Color = clWindowText
+    Font.Height = -9
+    Font.Name = 'Tahoma'
+    ParentColor = False
+    ParentFont = False
+  end
+  object Button1: TButton
+    Left = 180
+    Height = 25
+    Top = 425
+    Width = 105
+    Anchors = [akTop]
+    Caption = 'OK'
+    OnClick = Button1Click
+    TabOrder = 0
+  end
+  object Button2: TButton
+    Left = 68
+    Height = 25
+    Top = 425
+    Width = 105
+    Anchors = [akTop]
+    Caption = 'Test'
+    OnClick = Button2Click
+    TabOrder = 1
+  end
+  object chkRandom: TCheckBox
+    Left = 15
+    Height = 17
+    Top = 166
+    Width = 92
+    Caption = 'Random Colors'
+    OnClick = chkRandomClick
+    TabOrder = 2
+  end
+  object Button3: TButton
+    Left = 256
+    Height = 17
+    Hint = 'Add variables'
+    Top = 12
+    Width = 48
+    Caption = 'Variables'
+    Font.Color = clWindowText
+    Font.Height = -9
+    Font.Name = 'Tahoma'
+    OnClick = Button3Click
+    ParentFont = False
+    ParentShowHint = False
+    ShowHint = True
+    TabOrder = 3
+  end
+  object fontSize: TTrackBar
+    Left = 69
+    Height = 29
+    Top = 303
+    Width = 241
+    Frequency = 10
+    Max = 250
+    Min = 10
+    PageSize = 1
+    Position = 10
+    TabOrder = 4
+  end
+  object udDuration: TUpDown
+    Left = 154
+    Height = 21
+    Top = 373
+    Width = 15
+    Associate = edChangeSeconds
+    Min = 1
+    Position = 5
+    TabOrder = 5
+    Wrap = False
+  end
+  object edChangeSeconds: TEdit
+    Left = 121
+    Height = 21
+    Top = 373
+    Width = 33
+    TabOrder = 6
+    Text = '5'
+  end
+  object screensaverMemo: TMemo
+    Left = 16
+    Height = 49
+    Top = 32
+    Width = 289
+    Lines.Strings = (
+      'rndware Screensaver'
+    )
+    TabOrder = 7
+  end
+  object Button4: TButton
+    Left = 33
+    Height = 25
+    Top = 425
+    Width = 25
+    Caption = '?'
+    OnClick = Button4Click
+    TabOrder = 8
+  end
+  object edPicturePath: TEdit
+    Left = 16
+    Height = 21
+    Top = 112
+    Width = 217
+    TabOrder = 9
+  end
+  object Button6: TButton
+    Left = 240
+    Height = 21
+    Top = 112
+    Width = 65
+    Caption = 'Select Files'
+    OnClick = Button6Click
+    TabOrder = 10
+  end
+  object chkShowText: TCheckBox
+    Left = 16
+    Height = 17
+    Top = 14
+    Width = 71
+    Caption = 'Show Text'
+    Checked = True
+    State = cbChecked
+    TabOrder = 11
+  end
+  object chkShowPictures: TCheckBox
+    Left = 16
+    Height = 17
+    Top = 94
+    Width = 95
+    Caption = 'Show picture(s)'
+    TabOrder = 12
+  end
+  object popVariables: TPopupMenu
+    left = 160
+    top = 449
+    object ime00001: TMenuItem
+      Caption = 'Time'
+      OnClick = ime00001Click
+    end
+    object imeDate1: TMenuItem
+      Caption = 'Date'
+      OnClick = imeDate1Click
+    end
+    object ComputerName1: TMenuItem
+      Caption = 'Computer Name'
+      OnClick = ComputerName1Click
+    end
+    object Uptime1: TMenuItem
+      Caption = 'Uptime'
+      OnClick = Uptime1Click
+    end
+  end
+  object ColorDialog1: TColorDialog
+    Color = clBlack
+    CustomColors.Strings = (
+      'ColorA=000000'
+      'ColorB=000080'
+      'ColorC=008000'
+      'ColorD=008080'
+      'ColorE=800000'
+      'ColorF=800080'
+      'ColorG=808000'
+      'ColorH=808080'
+      'ColorI=C0C0C0'
+      'ColorJ=0000FF'
+      'ColorK=00FF00'
+      'ColorL=00FFFF'
+      'ColorM=FF0000'
+      'ColorN=FF00FF'
+      'ColorO=FFFF00'
+      'ColorP=FFFFFF'
+      'ColorQ=C0DCC0'
+      'ColorR=F0CAA6'
+      'ColorS=F0FBFF'
+      'ColorT=A4A0A0'
+    )
+    left = 112
+    top = 448
+  end
+  object ColorDialog2: TColorDialog
+    Color = clBlack
+    CustomColors.Strings = (
+      'ColorA=000000'
+      'ColorB=000080'
+      'ColorC=008000'
+      'ColorD=008080'
+      'ColorE=800000'
+      'ColorF=800080'
+      'ColorG=808000'
+      'ColorH=808080'
+      'ColorI=C0C0C0'
+      'ColorJ=0000FF'
+      'ColorK=00FF00'
+      'ColorL=00FFFF'
+      'ColorM=FF0000'
+      'ColorN=FF00FF'
+      'ColorO=FFFF00'
+      'ColorP=FFFFFF'
+      'ColorQ=C0DCC0'
+      'ColorR=F0CAA6'
+      'ColorS=F0FBFF'
+      'ColorT=A4A0A0'
+    )
+    left = 72
+    top = 456
+  end
+  object OpenPictureDialog1: TOpenPictureDialog
+    Options = [ofHideReadOnly, ofAllowMultiSelect, ofEnableSizing]
+    left = 200
+    top = 464
+  end
+end
