@@ -2,6 +2,7 @@
 <CONFIG>
   <ProjectOptions>
     <Version Value="9"/>
+    <PathDelim Value="\"/>
     <General>
       <Flags>
         <MainUnitHasUsesSectionForAllUnits Value="False"/>
@@ -9,7 +10,7 @@
         <MainUnitHasTitleStatement Value="False"/>
       </Flags>
       <SessionStorage Value="InProjectDir"/>
-      <MainUnit Value="-1"/>
+      <MainUnit Value="0"/>
       <Title Value="rwScSv"/>
       <UseAppBundle Value="False"/>
       <ResourceType Value="res"/>
@@ -33,17 +34,77 @@
         <FormatVersion Value="1"/>
       </local>
     </RunParams>
+    <RequiredPackages Count="1">
+      <Item1>
+        <PackageName Value="LCL"/>
+      </Item1>
+    </RequiredPackages>
+    <Units Count="7">
+      <Unit0>
+        <Filename Value="rwScSv.lpr"/>
+        <IsPartOfProject Value="True"/>
+      </Unit0>
+      <Unit1>
+        <Filename Value="uScsv.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmScreensaver"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="uScsv"/>
+      </Unit1>
+      <Unit2>
+        <Filename Value="uSett.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmSettings"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="uSett"/>
+      </Unit2>
+      <Unit3>
+        <Filename Value="uConf.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmConfirm"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="uConf"/>
+      </Unit3>
+      <Unit4>
+        <Filename Value="uFont.pas"/>
+        <IsPartOfProject Value="True"/>
+        <HasResources Value="True"/>
+        <UnitName Value="uFont"/>
+      </Unit4>
+      <Unit5>
+        <Filename Value="uAbou.pas"/>
+        <IsPartOfProject Value="True"/>
+        <HasResources Value="True"/>
+        <UnitName Value="uAbou"/>
+      </Unit5>
+      <Unit6>
+        <Filename Value="unit1.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Form1"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="Unit1"/>
+      </Unit6>
+    </Units>
   </ProjectOptions>
   <CompilerOptions>
     <Version Value="11"/>
-    <SearchPaths>
-      <IncludeFiles Value="$(ProjOutDir)"/>
-    </SearchPaths>
+    <PathDelim Value="\"/>
     <Parsing>
       <SyntaxOptions>
         <SyntaxMode Value="delphi"/>
       </SyntaxOptions>
     </Parsing>
+    <Linking>
+      <Options>
+        <Win32>
+          <GraphicApplication Value="True"/>
+        </Win32>
+      </Options>
+    </Linking>
     <Other>
       <CompilerMessages>
         <MsgFileName Value=""/>

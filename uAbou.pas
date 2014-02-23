@@ -1,10 +1,12 @@
   unit uAbou;
 
+{$MODE Delphi}
+
 interface
 
 uses
-  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, StdCtrls, ExtCtrls, ShellAPI;
+  LCLIntf, LCLType, LMessages, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, StdCtrls, ExtCtrls, FileUtil;
 
 type
   TfrmAbout = class(TForm)
@@ -41,7 +43,7 @@ implementation
 
 uses uSett;
 
-{$R *.dfm}
+{$R *.lfm}
 
 procedure TfrmAbout.Button1Click(Sender: TObject);
 begin
@@ -49,13 +51,13 @@ begin
 end;
 
 function GetAppVersionStr: string;
-var
-  Exe: string;
+//var
+{  Exe: string;
   Size, Handle: DWORD;
   Buffer: array of Char;
-  FixedPtr: PVSFixedFileInfo;
+  FixedPtr: PVSFixedFileInfo;     }
 begin
-  Exe := ParamStr(0);
+{  Exe := ParamStr(0);
   Size := GetFileVersionInfoSize(PChar(Exe), Handle);
   if Size = 0 then
     RaiseLastOSError;
@@ -68,12 +70,12 @@ begin
     [LongRec(FixedPtr.dwFileVersionMS).Hi,  //major
      LongRec(FixedPtr.dwFileVersionMS).Lo,  //minor
      LongRec(FixedPtr.dwFileVersionLS).Hi,  //release
-     LongRec(FixedPtr.dwFileVersionLS).Lo]) //build
+     LongRec(FixedPtr.dwFileVersionLS).Lo]) //build  }
 end;
 
 procedure TfrmAbout.Execute(What: string);
 begin
-  ShellExecute(handle,'open',PChar(What), '','',SW_SHOWNORMAL);
+   OpenDocument(PChar(What)); { *Converted from ShellExecute*  }
 end;
 
 procedure TfrmAbout.Label5Click(Sender: TObject);
@@ -93,8 +95,8 @@ end;
 
 procedure TfrmAbout.Label9Click(Sender: TObject);
 begin
- DeleteFile(frmSettings.configFile);
- Application.MessageBox(PChar('Reset Settings!'), PChar('Congrats.'));
+ DeleteFileUTF8(frmSettings.GetConfigFilePath); { *Converted from DeleteFile*  }
+ ShowMessage(PChar('Reset Settings!'));
  frmSettings.LoadConfig;
 end;
 

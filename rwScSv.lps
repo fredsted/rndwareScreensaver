@@ -1,119 +1,214 @@
 <?xml version="1.0"?>
 <CONFIG>
   <ProjectSession>
+    <PathDelim Value="\"/>
     <Version Value="9"/>
     <BuildModes Active="Default"/>
-    <Units Count="10">
+    <Units Count="7">
       <Unit0>
-        <Filename Value="uAbou.dfm"/>
+        <Filename Value="rwScSv.lpr"/>
+        <IsPartOfProject Value="True"/>
         <EditorIndex Value="0"/>
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
-        <CursorPos X="1" Y="1"/>
-        <UsageCount Value="10"/>
+        <CursorPos X="17" Y="13"/>
+        <UsageCount Value="72"/>
         <Loaded Value="True"/>
-        <DefaultSyntaxHighlighter Value="LFM"/>
+        <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit0>
       <Unit1>
-        <Filename Value="uConf.dfm"/>
-        <EditorIndex Value="1"/>
+        <Filename Value="uScsv.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmScreensaver"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="uScsv"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="4"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="1"/>
-        <CursorPos X="1" Y="1"/>
-        <UsageCount Value="10"/>
+        <TopLine Value="50"/>
+        <CursorPos X="37" Y="140"/>
+        <UsageCount Value="72"/>
         <Loaded Value="True"/>
-        <DefaultSyntaxHighlighter Value="LFM"/>
+        <LoadedDesigner Value="True"/>
+        <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit1>
       <Unit2>
-        <Filename Value="uFont.dfm"/>
+        <Filename Value="uSett.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmSettings"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="uSett"/>
+        <EditorIndex Value="5"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="109"/>
+        <CursorPos X="7" Y="133"/>
+        <UsageCount Value="72"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+        <DefaultSyntaxHighlighter Value="Delphi"/>
+      </Unit2>
+      <Unit3>
+        <Filename Value="uConf.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmConfirm"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="uConf"/>
         <EditorIndex Value="2"/>
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="1" Y="1"/>
-        <UsageCount Value="10"/>
+        <UsageCount Value="72"/>
         <Loaded Value="True"/>
-        <DefaultSyntaxHighlighter Value="LFM"/>
-      </Unit2>
-      <Unit3>
-        <Filename Value="uScsv.dfm"/>
+        <LoadedDesigner Value="True"/>
+        <DefaultSyntaxHighlighter Value="Delphi"/>
+      </Unit3>
+      <Unit4>
+        <Filename Value="uFont.pas"/>
+        <IsPartOfProject Value="True"/>
+        <HasResources Value="True"/>
+        <UnitName Value="uFont"/>
         <EditorIndex Value="3"/>
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="1" Y="1"/>
-        <UsageCount Value="10"/>
+        <UsageCount Value="72"/>
         <Loaded Value="True"/>
-        <DefaultSyntaxHighlighter Value="LFM"/>
-      </Unit3>
-      <Unit4>
-        <Filename Value="uSett.dfm"/>
-        <EditorIndex Value="4"/>
-        <WindowIndex Value="0"/>
-        <TopLine Value="1"/>
-        <CursorPos X="1" Y="1"/>
-        <UsageCount Value="10"/>
-        <Loaded Value="True"/>
-        <DefaultSyntaxHighlighter Value="LFM"/>
+        <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit4>
       <Unit5>
         <Filename Value="uAbou.pas"/>
+        <IsPartOfProject Value="True"/>
+        <HasResources Value="True"/>
         <UnitName Value="uAbou"/>
-        <EditorIndex Value="5"/>
+        <EditorIndex Value="1"/>
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
-        <CursorPos X="1" Y="1"/>
-        <UsageCount Value="10"/>
+        <CursorPos X="38" Y="99"/>
+        <UsageCount Value="72"/>
         <Loaded Value="True"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit5>
       <Unit6>
-        <Filename Value="uConf.pas"/>
-        <UnitName Value="uConf"/>
-        <EditorIndex Value="6"/>
+        <Filename Value="unit1.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Form1"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="Unit1"/>
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
-        <CursorPos X="1" Y="1"/>
-        <UsageCount Value="10"/>
-        <Loaded Value="True"/>
+        <CursorPos X="3" Y="33"/>
+        <UsageCount Value="72"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit6>
-      <Unit7>
-        <Filename Value="uFont.pas"/>
-        <UnitName Value="uFont"/>
-        <EditorIndex Value="7"/>
-        <WindowIndex Value="0"/>
-        <TopLine Value="1"/>
-        <CursorPos X="1" Y="1"/>
-        <UsageCount Value="10"/>
-        <Loaded Value="True"/>
-        <DefaultSyntaxHighlighter Value="Delphi"/>
-      </Unit7>
-      <Unit8>
-        <Filename Value="uScsv.pas"/>
-        <UnitName Value="uScsv"/>
-        <EditorIndex Value="8"/>
-        <WindowIndex Value="0"/>
-        <TopLine Value="1"/>
-        <CursorPos X="1" Y="1"/>
-        <UsageCount Value="10"/>
-        <Loaded Value="True"/>
-        <DefaultSyntaxHighlighter Value="Delphi"/>
-      </Unit8>
-      <Unit9>
-        <Filename Value="uSett.pas"/>
-        <UnitName Value="uSett"/>
-        <IsVisibleTab Value="True"/>
-        <EditorIndex Value="9"/>
-        <WindowIndex Value="0"/>
-        <TopLine Value="1"/>
-        <CursorPos X="1" Y="1"/>
-        <UsageCount Value="10"/>
-        <Loaded Value="True"/>
-        <DefaultSyntaxHighlighter Value="Delphi"/>
-      </Unit9>
     </Units>
     <General>
       <ActiveWindowIndexAtStart Value="0"/>
     </General>
-    <JumpHistory Count="0" HistoryIndex="-1"/>
+    <JumpHistory Count="25" HistoryIndex="24">
+      <Position1>
+        <Filename Value="uAbou.pas"/>
+        <Caret Line="1" Column="1" TopLine="1"/>
+      </Position1>
+      <Position2>
+        <Filename Value="uAbou.pas"/>
+        <Caret Line="73" Column="55" TopLine="62"/>
+      </Position2>
+      <Position3>
+        <Filename Value="uAbou.pas"/>
+        <Caret Line="54" Column="3" TopLine="53"/>
+      </Position3>
+      <Position4>
+        <Filename Value="uAbou.pas"/>
+        <Caret Line="99" Column="13" TopLine="73"/>
+      </Position4>
+      <Position5>
+        <Filename Value="uScsv.pas"/>
+        <Caret Line="1" Column="1" TopLine="1"/>
+      </Position5>
+      <Position6>
+        <Filename Value="rwScSv.lpr"/>
+        <Caret Line="1" Column="1" TopLine="1"/>
+      </Position6>
+      <Position7>
+        <Filename Value="rwScSv.lpr"/>
+        <Caret Line="40" Column="43" TopLine="24"/>
+      </Position7>
+      <Position8>
+        <Filename Value="rwScSv.lpr"/>
+        <Caret Line="16" Column="33" TopLine="1"/>
+      </Position8>
+      <Position9>
+        <Filename Value="rwScSv.lpr"/>
+        <Caret Line="16" Column="8" TopLine="1"/>
+      </Position9>
+      <Position10>
+        <Filename Value="rwScSv.lpr"/>
+        <Caret Line="11" Column="32" TopLine="1"/>
+      </Position10>
+      <Position11>
+        <Filename Value="uScsv.pas"/>
+        <Caret Line="161" Column="29" TopLine="121"/>
+      </Position11>
+      <Position12>
+        <Filename Value="uScsv.pas"/>
+        <Caret Line="70" Column="70" TopLine="43"/>
+      </Position12>
+      <Position13>
+        <Filename Value="uScsv.pas"/>
+        <Caret Line="71" Column="16" TopLine="33"/>
+      </Position13>
+      <Position14>
+        <Filename Value="uScsv.pas"/>
+        <Caret Line="81" Column="45" TopLine="46"/>
+      </Position14>
+      <Position15>
+        <Filename Value="uScsv.pas"/>
+        <Caret Line="161" Column="35" TopLine="135"/>
+      </Position15>
+      <Position16>
+        <Filename Value="uScsv.pas"/>
+        <Caret Line="164" Column="25" TopLine="135"/>
+      </Position16>
+      <Position17>
+        <Filename Value="uScsv.pas"/>
+        <Caret Line="161" Column="14" TopLine="138"/>
+      </Position17>
+      <Position18>
+        <Filename Value="uScsv.pas"/>
+        <Caret Line="164" Column="16" TopLine="135"/>
+      </Position18>
+      <Position19>
+        <Filename Value="uScsv.pas"/>
+        <Caret Line="166" Column="7" TopLine="138"/>
+      </Position19>
+      <Position20>
+        <Filename Value="uScsv.pas"/>
+        <Caret Line="146" Column="34" TopLine="114"/>
+      </Position20>
+      <Position21>
+        <Filename Value="uScsv.pas"/>
+        <Caret Line="104" Column="35" TopLine="102"/>
+      </Position21>
+      <Position22>
+        <Filename Value="uScsv.pas"/>
+        <Caret Line="101" Column="34" TopLine="59"/>
+      </Position22>
+      <Position23>
+        <Filename Value="uScsv.pas"/>
+        <Caret Line="171" Column="17" TopLine="150"/>
+      </Position23>
+      <Position24>
+        <Filename Value="uScsv.pas"/>
+        <Caret Line="170" Column="17" TopLine="149"/>
+      </Position24>
+      <Position25>
+        <Filename Value="uScsv.pas"/>
+        <Caret Line="155" Column="17" TopLine="130"/>
+      </Position25>
+    </JumpHistory>
   </ProjectSession>
 </CONFIG>

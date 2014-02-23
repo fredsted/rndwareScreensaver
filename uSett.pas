@@ -37,7 +37,7 @@ type
     Label3: TLabel;
     udDuration: TUpDown;
     Label4: TLabel;
-    changeSeconds: TEdit;
+    edChangeSeconds: TEdit;
     screensaverMemo: TMemo;
     Label7: TLabel;
     Label8: TLabel;
@@ -68,7 +68,7 @@ type
     procedure Uptime1Click(Sender: TObject);
     
     function SettingDir: string;
-    function configFile: string;
+    function GetConfigFilePath: string;
   private
 
   public
@@ -88,7 +88,7 @@ var
   canSelColor: boolean;
   canCloseOrNot: Boolean;
 
-{$R *.dfm}
+{$R *.lfm}
 
 { TfrmSettings }
 
@@ -101,7 +101,7 @@ begin
   Result := FilePath;
 end;
 
-function TfrmSettings.configFile: string;
+function TfrmSettings.GetConfigFilePath: string;
 begin
   Result := self.SettingDir+'\screenconfig.ini';
 end;
@@ -110,17 +110,20 @@ procedure TfrmSettings.LoadConfig;
 var
   iniFile: TIniFile;
 begin
-
-  iniFile := TIniFile.Create(configFile);
+  iniFile := TIniFile.Create(GetConfigFilePath);
   try
     with iniFile do begin
-      screensaverMemo.Lines.Text := EnDeCrypt(ReadString('Config', 'Text', EnDeCrypt('rndware Screensaver')));
-      chkRandom.Checked :=    ReadBool('Config', 'Random', chkRandom.Checked);
-      shpFont.Brush.Color :=  ReadInteger('Config', 'FontColor', 16777215);
-      shpBack.Brush.Color :=  ReadInteger('Config', 'BackColor', 0);
-      udDuration.Position :=  ReadInteger('Config', 'Duration', 0);
-      fontSize.Position :=    ReadInteger('Config', 'FontSize', 5);
-      btnFont.Font.Name :=    ReadString('Config', 'Font', 'Tahoma');
+      screensaverMemo.Lines.Text :=   EnDeCrypt(ReadString('Config', 'Text', EnDeCrypt('rndware Screensaver')));
+      chkRandom.Checked :=            ReadBool('Config', 'Random', chkRandom.Checked);
+      chkShowText.Checked :=          ReadBool('Config', 'ShowText', chkShowText.Checked);
+      chkShowPictures.Checked :=      ReadBool('Config', 'ShowPictures', chkShowPictures.Checked);
+      shpFont.Brush.Color :=          ReadInteger('Config', 'FontColor', 16777215);
+      shpBack.Brush.Color :=          ReadInteger('Config', 'BackColor', 0);
+      udDuration.Position :=          ReadInteger('Config', 'Duration', StrToInt(edChangeSeconds.Text));
+      fontSize.Position :=            ReadInteger('Config', 'FontSize', fontSize.Position);
+      btnFont.Font.Name :=            ReadString('Config', 'Font', 'Tahoma');
+      edPicturePath.Text  :=          EnDeCrypt(ReadString('Config', 'PicturePath', ''));
+
     end;
   finally
     iniFile.Free;
@@ -132,23 +135,23 @@ procedure TfrmSettings.SaveConfig;
 var
   iniFile: TIniFile;
 begin
-  iniFile := TIniFile.Create(configFile);
-
+  iniFile := TIniFile.Create(GetConfigFilePath);
   try
     with iniFile do begin
       WriteString   ('Config', 'Text', EnDeCrypt(screensaverMemo.Text));
       WriteBool     ('Config', 'Random', chkRandom.Checked);
+      WriteBool     ('Config', 'ShowText', chkShowText.Checked);
+      WriteBool     ('Config', 'ShowPictures', chkShowPictures.Checked);
       WriteInteger  ('Config', 'FontColor', shpFont.Brush.Color);
       WriteInteger  ('Config', 'BackColor', shpBack.Brush.Color);
       WriteInteger  ('Config', 'Duration', udDuration.Position);
       WriteInteger  ('Config', 'FontSize', fontSize.Position);
       WriteString   ('Config', 'Font', btnFont.Font.Name);
+      WriteString   ('Config', 'PicturePath', EnDeCrypt(edPicturePath.Text));
     end;
-
     except
       ShowMessage('Could not save configuration');
   end;
-
 end;
 
 procedure TfrmSettings.FormCreate(Sender: TObject);

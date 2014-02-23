@@ -1,18 +1,25 @@
 unit uScsv;
 
+{$MODE Delphi}
+
 interface
 
 uses
-  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, ExtCtrls, StdCtrls, IniFiles, SHFolder, ShlObj;
+  LCLIntf, LCLType, LMessages, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, ExtCtrls, StdCtrls, IniFiles, SHFolder, ShlObj{,
+  CustomizeDlg};
 
 type
+
+  { TfrmScreensaver }
+
   TfrmScreensaver = class(TForm)
     tmrScreensaver: TTimer;
     bl: TLabel;
     mouseTimer: TTimer;
     tmrTextUpdater: TTimer;
 
+    procedure FormCreate(Sender: TObject);
     procedure LoadSettings;
     function GetRandomColor: TColor;
 
@@ -43,13 +50,14 @@ var
   randomColors: boolean;
 
 
-{$R *.dfm}
+{$R *.lfm}
 
 procedure TfrmScreensaver.LoadSettings;
 var
   iniFile: TIniFile;
+  images: TStringList;
 begin
-  iniFile := TIniFile.Create(frmSettings.configFile);
+  iniFile := TIniFile.Create(frmSettings.GetConfigFilePath);
   try
     with iniFile do begin
       bl.Caption := frmSettings.EnDeCrypt(ReadString('Config', 'Text', frmSettings.screensaverMemo.Text));
@@ -58,9 +66,10 @@ begin
       bl.Font.Color := (ReadInteger('Config', 'FontColor', frmSettings.shpFont.Brush.Color));
       frmScreensaver.Color := ColorToRGB(ReadInteger('Config', 'BackColor', frmSettings.shpBack.Brush.Color));
       bl.Font.Color := ReadInteger('Config', 'FontColor', 0);
-      tmrScreensaver.Interval := ReadInteger('Config', 'Duration', StrToInt(frmSettings.changeSeconds.Text)) * 1000;
+      tmrScreensaver.Interval := ReadInteger('Config', 'Duration', StrToInt(frmSettings.edChangeSeconds.Text)) * 1000;
       bl.Font.Size := (ReadInteger('Config', 'FontSize', 10) * Screen.Width) div 1000;
       bl.Font.Name := ReadString('Config', 'Font', 'Tahoma');
+      imageList.DelimitedText:=frmSettings.EnDeCrypt(ReadString('Config', 'PicturePath', ''));
     end;
   finally
     iniFile.Free;
@@ -89,8 +98,10 @@ end;
 
 procedure TfrmScreensaver.FormShow(Sender: TObject);
 begin
-  tmrScreensaverTimer(nil);
+
+  // ShowCursor(false);
   LoadSettings;
+  tmrScreensaverTimer(nil);
 end;
 
 procedure TfrmScreensaver.FormMouseMove(Sender: TObject;

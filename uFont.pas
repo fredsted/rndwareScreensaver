@@ -1,9 +1,11 @@
 unit uFont;
 
+{$MODE Delphi}
+
 interface
 
 uses
-  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  LCLIntf, LCLType, LMessages, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
   Dialogs, StdCtrls;
 
 type
@@ -32,7 +34,7 @@ implementation
 
 uses uSett;
 
-{$R *.dfm}
+{$R *.lfm}
 
 procedure TfrmFontConfig.FormShow(Sender: TObject);
 begin
