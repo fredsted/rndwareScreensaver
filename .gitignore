@@ -10,3 +10,8 @@ __history
 bin/*
 rwScSv.scr
 *.ddp
+*.o
+*.or
+*.app
+/ConverterBackup/*
+/backup/*
